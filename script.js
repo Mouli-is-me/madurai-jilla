@@ -54,10 +54,8 @@ function openCart() {
     alert("Cart is empty");
     return;
   }
-
   const modal = document.getElementById("cart-modal");
-  modal.classList.remove("hidden");
-  modal.style.display = "flex";
+  modal.classList.add("show");
   document.body.style.overflow = "hidden";
 }
 
@@ -98,10 +96,10 @@ function decreaseQty(item) {
 
 function closeCart() {
   const modal = document.getElementById("cart-modal");
-  modal.classList.add("hidden");
-  modal.style.display = "none";
+  modal.classList.remove("show");
   document.body.style.overflow = "auto";
 }
+
 
 
 async function placeOrder() {
@@ -137,6 +135,7 @@ window.showCategory = showCategory;
 window.placeOrder = placeOrder;
 window.increaseQty = increaseQty;
 window.decreaseQty = decreaseQty;
+
 
 
 
