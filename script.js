@@ -58,5 +58,6 @@ function placeOrder() {
   }
 
   msg += `\nTotal: ₹${total}`;
-  window.open(`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(msg)}`);
+  window.open(`https://wa.me/919677398925?text=${encodeURIComponent(msg)}`);
 }
+
