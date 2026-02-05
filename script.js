@@ -8,6 +8,12 @@ function addItem(name, price) {
   total += price;
   count++;
   updateBar();
+
+  const modal = document.getElementById("cart-modal");
+  if (modal.style.display === "flex") {
+    renderCart();
+  }
+
   navigator.vibrate?.(30);
 }
 
@@ -84,12 +90,6 @@ function decreaseQty(item) {
   }
 }
 
-function updateBar() {
-  document.getElementById("itemCount").innerText = count;
-  document.getElementById("total").innerText = total;
-}
-
-
 function closeCart() {
   document.getElementById("cart-modal").style.display = "none";
 }
@@ -105,5 +105,6 @@ function placeOrder() {
   msg += `\nTotal: ₹${total}`;
   window.open(`https://wa.me/919677398925?text=${encodeURIComponent(msg)}`);
 }
+
 
 
