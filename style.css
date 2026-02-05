@@ -84,9 +84,11 @@ body {
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
   display: none;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  z-index: 999;
 }
+
 
 .cart-box {
   background: white;
@@ -150,3 +152,4 @@ input {
   min-width: 20px;
   text-align: center;
 }
+
