@@ -22,6 +22,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const ordersDiv = document.getElementById("orders");
+console.log("Orders div:", ordersDiv);
 
 onSnapshot(collection(db, "orders"), (snapshot) => {
   ordersDiv.innerHTML = "";
@@ -45,4 +46,5 @@ async function markDone(id) {
 }
 
 });
+
 
