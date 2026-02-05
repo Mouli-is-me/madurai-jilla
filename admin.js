@@ -24,15 +24,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const ordersDiv = document.getElementById("orders");
   console.log("Orders div:", ordersDiv);
 
- onSnapshot(collection(db, "orders"), (snapshot) => {
+onSnapshot(collection(db, "orders"), (snapshot) => {
   ordersDiv.innerHTML = "";
 
   snapshot.forEach((docSnap) => {
     const o = docSnap.data();
 
     let itemsHtml = "";
-    for (let item in o.items) {
-      itemsHtml += `<div>• ${item} x ${o.items[item].qty}</div>`;
+
+    if (o.items && typeof o.items === "object") {
+      for (let itemName in o.items) {
+        const item = o.items[itemName];
+        const qty = item.qty ?? item.quantity ?? 1;
+
+        itemsHtml += `
+          <div class="item-line">
+            ${itemName} × ${qty}
+          </div>
+        `;
+      }
+    } else {
+      itemsHtml = `<div class="item-line">⚠ No items found</div>`;
     }
 
     ordersDiv.innerHTML += `
@@ -66,5 +78,6 @@ window.markDone = async function (id) {
     status: "DONE",
   });
 };
+
 
 
