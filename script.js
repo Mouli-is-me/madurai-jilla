@@ -37,10 +37,6 @@ function addItem(name, price) {
   navigator.vibrate?.(30);
 }
 
-
-  navigator.vibrate?.(30);
-}
-
 function updateBar() {
   document.getElementById("itemCount").innerText = count;
   document.getElementById("total").innerText = total;
@@ -133,5 +129,3 @@ window.showCategory = showCategory;
 window.placeOrder = placeOrder;
 window.increaseQty = increaseQty;
 window.decreaseQty = decreaseQty;
-
-
