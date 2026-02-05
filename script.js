@@ -6,12 +6,6 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCx0gBDakjvl0v9K6UNXEemMAdZoamlQI8",
   authDomain: "madurai-jilla.firebaseapp.com",
@@ -22,9 +16,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
-const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
 
 let cart = {};
 let total = 0;
@@ -160,6 +153,7 @@ window.showCategory = showCategory;
 window.placeOrder = placeOrder;
 window.increaseQty = increaseQty;
 window.decreaseQty = decreaseQty;
+
 
 
 
