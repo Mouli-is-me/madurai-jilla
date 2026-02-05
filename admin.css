@@ -53,6 +53,19 @@ main {
 .status.DONE {
   color: #43a047;
 }
+.items {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.item-line {
+  padding: 4px 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.item-line:last-child {
+  border-bottom: none;
+}
 
 button {
   width: 100%;
@@ -63,3 +76,4 @@ button {
   color: white;
   font-size: 15px;
 }
+
