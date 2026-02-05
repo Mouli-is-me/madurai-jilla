@@ -116,6 +116,7 @@ function closeCart() {
 }
 
 async function placeOrder() {
+  items: cart,
   let table = document.getElementById("table").value;
 
   if (!table) {
@@ -123,13 +124,14 @@ async function placeOrder() {
     return;
   }
 
-  const order = {
-    table,
-    items: cart,
-    total,
-    status: "NEW",
-    createdAt: serverTimestamp()
-  };
+ const orderData = {
+  table: table,
+  items: cart,   
+  total: total,
+  status: "NEW",
+  time: serverTimestamp()
+};
+
 
   try {
     await addDoc(collection(db, "orders"), order);
@@ -153,6 +155,7 @@ window.showCategory = showCategory;
 window.placeOrder = placeOrder;
 window.increaseQty = increaseQty;
 window.decreaseQty = decreaseQty;
+
 
 
 
