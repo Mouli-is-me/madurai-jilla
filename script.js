@@ -37,13 +37,58 @@ function openCart() {
   const modal = document.getElementById("cart-modal");
   modal.style.display = "flex";
 
+  renderCart();
+}
+
+function renderCart() {
   const box = document.getElementById("cart-items");
   box.innerHTML = "";
 
   for (let item in cart) {
-    box.innerHTML += `<p>${item} x ${cart[item].qty}</p>`;
+    box.innerHTML += `
+      <div class="cart-item">
+        <span>${item}</span>
+
+        <div class="qty">
+          <button onclick="decreaseQty('${item}')">−</button>
+          <span>${cart[item].qty}</span>
+          <button onclick="increaseQty('${item}')">+</button>
+        </div>
+      </div>
+    `;
+  }
+
+  updateBar();
+}
+
+function increaseQty(item) {
+  cart[item].qty++;
+  count++;
+  total += cart[item].price;
+  renderCart();
+}
+
+function decreaseQty(item) {
+  cart[item].qty--;
+  count--;
+  total -= cart[item].price;
+
+  if (cart[item].qty === 0) {
+    delete cart[item];
+  }
+
+  if (count === 0) {
+    closeCart();
+  } else {
+    renderCart();
   }
 }
+
+function updateBar() {
+  document.getElementById("itemCount").innerText = count;
+  document.getElementById("total").innerText = total;
+}
+
 
 function closeCart() {
   document.getElementById("cart-modal").style.display = "none";
@@ -60,4 +105,5 @@ function placeOrder() {
   msg += `\nTotal: ₹${total}`;
   window.open(`https://wa.me/919677398925?text=${encodeURIComponent(msg)}`);
 }
+
 
