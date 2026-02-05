@@ -223,27 +223,21 @@
       <span>View Cart →</span>
     </div>
 
+  <script type="module" src="script.js?v=1001"></script>
     <div id="cart-modal" class="hidden">
-      <div class="cart-box">
-        <h2>🧾 Your Order</h2>
-        <div id="cart-items"></div>
+  <div class="cart-box">
+    <h2>🧾 Your Order</h2>
+    <div id="cart-items"></div>
 
-       <input
-  type="text"
-  id="name"
-  name="name"
-  placeholder="Customer Name"
-  autocomplete="name"
-/>
+    <input type="text" id="name" placeholder="Customer Name" />
+    <button onclick="placeOrder()">Place Order</button>
+    <button class="close" onclick="closeCart()">Close</button>
+  </div>
+</div>
 
-        <button onclick="placeOrder()">Place Order</button>
-        <button class="close" onclick="closeCart()">Close</button>
-      </div>
-    </div>
-
-  <script type="module" src="script.js?v=999"></script>
   </body>
 </html>
+
 
 
 
