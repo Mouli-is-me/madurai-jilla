@@ -21,7 +21,6 @@ const firebaseConfig = {
   appId: "1:164673347054:web:d151919fb15a2941f202ff"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 const app = initializeApp(firebaseConfig);
@@ -144,7 +143,6 @@ async function placeOrder() {
 
     alert("✅ Order placed successfully!");
 
-    // reset cart
     cart = {};
     total = 0;
     count = 0;
@@ -155,6 +153,15 @@ async function placeOrder() {
     console.error(err);
   }
 }
+window.addItem = addItem;
+window.openCart = openCart;
+window.closeCart = closeCart;
+window.showCategory = showCategory;
+window.placeOrder = placeOrder;
+window.increaseQty = increaseQty;
+window.decreaseQty = decreaseQty;
+
+
 
 
 
