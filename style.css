@@ -159,4 +159,29 @@ input {
   text-align: center;
 }
 
+#cart-modal {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+#cart-modal.show {
+  display: flex;
+}
+
+.cart-box {
+  background: #fff;
+  width: 90%;
+  max-width: 380px;
+  border-radius: 16px;
+  padding: 16px;
+}
+
 
