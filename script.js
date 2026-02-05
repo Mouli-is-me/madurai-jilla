@@ -97,14 +97,14 @@ function closeCart() {
 }
 
 async function placeOrder() {
-  let table = document.getElementById("table").value;
-  if (!table) {
-    alert("Enter table number");
+  let name = document.getElementById("name").value;
+  if (!name) {
+    alert("Enter Customer Name ");
     return;
   }
 
   const orderData = {
-    table: table,
+    name: name,
     items: cart,
     total: total,
     status: "NEW",
@@ -129,3 +129,4 @@ window.showCategory = showCategory;
 window.placeOrder = placeOrder;
 window.increaseQty = increaseQty;
 window.decreaseQty = decreaseQty;
+
