@@ -24,27 +24,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const ordersDiv = document.getElementById("orders");
   console.log("Orders div:", ordersDiv);
 
-  onSnapshot(collection(db, "orders"), (snapshot) => {
-    ordersDiv.innerHTML = "";
+ onSnapshot(collection(db, "orders"), (snapshot) => {
+  ordersDiv.innerHTML = "";
 
-    snapshot.forEach((docSnap) => {
-      const o = docSnap.data();
+  snapshot.forEach((docSnap) => {
+    const o = docSnap.data();
 
-      ordersDiv.innerHTML += `
-        <div style="border:1px solid #ccc;padding:10px;margin:10px">
-          <b>Table:</b> ${o.table}<br>
-          <b>Total:</b> ₹${o.total}<br>
-          <b>Status:</b> ${o.status}<br>
-          <button onclick="markDone('${docSnap.id}')">Mark Done</button>
+    let itemsHtml = "";
+    for (let item in o.items) {
+      itemsHtml += `<div>• ${item} x ${o.items[item].qty}</div>`;
+    }
+
+    ordersDiv.innerHTML += `
+      <div class="order-card">
+        <div class="order-header">
+          <span>Table ${o.table}</span>
+          <span>₹${o.total}</span>
         </div>
-      `;
-    });
+
+        <div class="items">
+          ${itemsHtml}
+        </div>
+
+        <div class="status ${o.status}">
+          Status: ${o.status}
+        </div>
+
+        ${
+          o.status === "NEW"
+            ? `<button onclick="markDone('${docSnap.id}')">Mark Done</button>`
+            : ""
+        }
+      </div>
+    `;
   });
 });
+
 
 window.markDone = async function (id) {
   await updateDoc(doc(db, "orders", id), {
     status: "DONE",
   });
 };
+
 
