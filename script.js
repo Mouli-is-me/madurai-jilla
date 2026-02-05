@@ -1,3 +1,32 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCx0gBDakjvl0v9K6UNXEemMAdZoamlQI8",
+  authDomain: "madurai-jilla.firebaseapp.com",
+  projectId: "madurai-jilla",
+  storageBucket: "madurai-jilla.firebasestorage.app",
+  messagingSenderId: "164673347054",
+  appId: "1:164673347054:web:d151919fb15a2941f202ff"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 let cart = {};
 let total = 0;
 let count = 0;
@@ -94,17 +123,39 @@ function closeCart() {
   document.getElementById("cart-modal").style.display = "none";
 }
 
-function placeOrder() {
-  let table = document.getElementById("table").value || "N/A";
-  let msg = `🍴 MADURAI JILLA\nTable: ${table}\n\nOrder:\n`;
+async function placeOrder() {
+  let table = document.getElementById("table").value;
 
-  for (let i in cart) {
-    msg += `- ${i} x ${cart[i].qty}\n`;
+  if (!table) {
+    alert("Enter table number");
+    return;
   }
 
-  msg += `\nTotal: ₹${total}`;
-  window.open(`https://wa.me/919677398925?text=${encodeURIComponent(msg)}`);
+  const order = {
+    table,
+    items: cart,
+    total,
+    status: "NEW",
+    createdAt: serverTimestamp()
+  };
+
+  try {
+    await addDoc(collection(db, "orders"), order);
+
+    alert("✅ Order placed successfully!");
+
+    // reset cart
+    cart = {};
+    total = 0;
+    count = 0;
+    updateBar();
+    closeCart();
+  } catch (err) {
+    alert("❌ Failed to place order");
+    console.error(err);
+  }
 }
+
 
 
 
