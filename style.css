@@ -121,3 +121,32 @@ input {
 .hidden {
   display: none;
 }
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #6a11cb;
+  color: white;
+  font-size: 18px;
+}
+
+.qty span {
+  min-width: 20px;
+  text-align: center;
+}
