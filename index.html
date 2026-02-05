@@ -113,6 +113,121 @@
         <h2>🧾 Your Order</h2>
         <div id="cart-items"></div>
 
+       <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Madurai Jilla</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>🍴 Madurai Jilla</h1>
+      <p>Scan • Order • Enjoy 😋</p>
+    </header>
+
+    <div class="tabs">
+      <button class="active" onclick="showCategory('juices', this)">
+        🥤 Juices
+      </button>
+      <button onclick="showCategory('veg', this)">🍔 Veg</button>
+      <button onclick="showCategory('nonveg', this)">🍗 Non-Veg</button>
+    </div>
+
+    <div class="menu">
+      <div class="category" id="juices">
+        <div class="item">
+          <div>
+            <h4>Mojito</h4>
+            <p>₹50</p>
+          </div>
+          <button onclick="addItem('Mojito', 50)">+</button>
+        </div>
+        <div class="item">
+          <div>
+            <h4>Mint Soda</h4>
+            <p>₹50</p>
+          </div>
+          <button onclick="addItem('Mint Soda', 50)">+</button>
+        </div>
+        <div class="item">
+          <div>
+            <h4>Lemon Soda</h4>
+            <p>₹50</p>
+          </div>
+          <button onclick="addItem('Lemon Soda', 50)">+</button>
+        </div>
+        <div class="item">
+          <div>
+            <h4>Rose Milk</h4>
+            <p>₹50</p>
+          </div>
+          <button onclick="addItem('Rose Milk', 50)">+</button>
+        </div>
+      </div>
+
+      <!-- VEG -->
+      <div class="category hidden" id="veg">
+        <div class="item">
+          <div>
+            <h4>Veg Burger</h4>
+            <p>₹55</p>
+          </div>
+          <button onclick="addItem('Veg Burger', 55)">+</button>
+        </div>
+        <div class="item">
+          <div>
+            <h4>Aaha Bread</h4>
+            <p>₹55</p>
+          </div>
+          <button onclick="addItem('Aaha Bread', 55)">+</button>
+        </div>
+        <div class="item">
+          <div>
+            <h4>French Fries</h4>
+            <p>₹60</p>
+          </div>
+          <button onclick="addItem('French Fries', 60)">+</button>
+        </div>
+      </div>
+
+      <!-- NON VEG -->
+      <div class="category hidden" id="nonveg">
+        <div class="item">
+          <div>
+            <h4>Chicken 65</h4>
+            <p>₹60</p>
+          </div>
+          <button onclick="addItem('Chicken 65', 60)">+</button>
+        </div>
+        <div class="item">
+          <div>
+            <h4>Popcorn Chicken</h4>
+            <p>₹70</p>
+          </div>
+          <button onclick="addItem('Popcorn Chicken', 70)">+</button>
+        </div>
+        <div class="item">
+          <div>
+            <h4>Shawarma</h4>
+            <p>₹80</p>
+          </div>
+          <button onclick="addItem('Shawarma', 80)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="cart-bar" onclick="openCart()">
+      🧾 <span id="itemCount">0</span> items | ₹<span id="total">0</span>
+      <span>View Cart →</span>
+    </div>
+
+    <div id="cart-modal" class="hidden">
+      <div class="cart-box">
+        <h2>🧾 Your Order</h2>
+        <div id="cart-items"></div>
+
         <input type="text" id="name" placeholder="Customer Name" />
         <button onclick="placeOrder()">Place Order</button>
         <button class="close" onclick="closeCart()">Close</button>
@@ -122,6 +237,19 @@
   <script type="module" src="script.js?v=999"></script>
   </body>
 </html>
+
+
+
+
+        <button onclick="placeOrder()">Place Order</button>
+        <button class="close" onclick="closeCart()">Close</button>
+      </div>
+    </div>
+
+  <script type="module" src="script.js?v=999"></script>
+  </body>
+</html>
+
 
 
 
