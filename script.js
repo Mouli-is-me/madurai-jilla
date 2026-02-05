@@ -54,9 +54,12 @@ function openCart() {
     alert("Cart is empty");
     return;
   }
-  document.getElementById("cart-modal").style.display = "flex";
-  renderCart();
+
+  const modal = document.getElementById("cart-modal");
+  modal.classList.remove("hidden");
+  modal.style.display = "flex";
 }
+
 
 function renderCart() {
   const box = document.getElementById("cart-items");
@@ -93,8 +96,11 @@ function decreaseQty(item) {
 }
 
 function closeCart() {
-  document.getElementById("cart-modal").style.display = "none";
+  const modal = document.getElementById("cart-modal");
+  modal.classList.add("hidden");
+  modal.style.display = "none";
 }
+
 
 async function placeOrder() {
   let name = document.getElementById("name").value;
@@ -129,4 +135,5 @@ window.showCategory = showCategory;
 window.placeOrder = placeOrder;
 window.increaseQty = increaseQty;
 window.decreaseQty = decreaseQty;
+
 
