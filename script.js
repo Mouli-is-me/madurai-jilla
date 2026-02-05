@@ -58,6 +58,7 @@ function openCart() {
   const modal = document.getElementById("cart-modal");
   modal.classList.remove("hidden");
   modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
 }
 
 
@@ -99,6 +100,7 @@ function closeCart() {
   const modal = document.getElementById("cart-modal");
   modal.classList.add("hidden");
   modal.style.display = "none";
+  document.body.style.overflow = "auto";
 }
 
 
@@ -135,5 +137,6 @@ window.showCategory = showCategory;
 window.placeOrder = placeOrder;
 window.increaseQty = increaseQty;
 window.decreaseQty = decreaseQty;
+
 
 
