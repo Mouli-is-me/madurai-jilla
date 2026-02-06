@@ -66,6 +66,26 @@ main {
 .item-line:last-child {
   border-bottom: none;
 }
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.tab {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 20px;
+  background: #ddd;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab.active {
+  background: #ff6b00;
+  color: white;
+}
 
 button {
   width: 100%;
@@ -76,4 +96,5 @@ button {
   color: white;
   font-size: 15px;
 }
+
 
