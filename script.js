@@ -97,30 +97,39 @@ document.getElementById("cart-modal").style.display = "none";
 }
 
 async function placeOrder() {
-  let table = document.getElementById("table").value;
-  if (!table) {
-    alert("Enter table number");
-return;
+  if (count === 0) {
+    alert("Cart is empty");
+    return;
+  }
+
+  const nameInput = document.getElementById("name");
+  const name = nameInput.value.trim();
+
+  if (!name) {
+    alert("Enter Customer Name");
+    return;
+  }
+
+  const orderData = {
+    name,
+    items: cart,
+    total,
+    status: "NEW",
+    time: serverTimestamp()
+  };
+
+  await addDoc(collection(db, "orders"), orderData);
+
+  alert("Order placed successfully");
+
+  cart = {};
+  total = 0;
+  count = 0;
+  updateBar();
+  nameInput.value = "";
+  closeCart();
 }
 
-const orderData = {
-table: table,    
-items: cart,
-total: total,
-status: "NEW",
-time: serverTimestamp()
-};
-
-await addDoc(collection(db, "orders"), orderData);
-
-alert("Order placed successfully");
-
-cart = {};
-total = 0;
-count = 0;
-updateBar();
-closeCart();
-}
 
 window.addItem = addItem;
 window.openCart = openCart;
@@ -129,3 +138,4 @@ window.showCategory = showCategory;
 window.placeOrder = placeOrder;
 window.increaseQty = increaseQty;
 window.decreaseQty = decreaseQty;
+
