@@ -35,8 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
       tab.classList.add("active");
 
       currentTab = tab.dataset.tab;
-
-      window.scrollTo(0, 0);
       renderOrders();
     });
   });
@@ -55,24 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const ordersDiv = document.getElementById("orders");
-
-  onSnapshot(collection(db, "orders"), (snapshot) => {
-    allOrders = [];
-
-    snapshot.forEach((docSnap) => {
-      allOrders.push({
-        id: docSnap.id,
-        ...docSnap.data(),
-      });
-    });
-
-    renderOrders();
-  });
-});
-
 function renderOrders() {
+  if (document.activeElement) {
+    document.activeElement.blur();
+  }
+
   const ordersDiv = document.getElementById("orders");
   ordersDiv.innerHTML = "";
 
@@ -127,5 +112,3 @@ window.markDone = async function (id) {
     status: "DONE",
   });
 };
-
-
