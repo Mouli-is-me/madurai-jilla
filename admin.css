@@ -74,6 +74,9 @@ main {
 }
 
 .tabs {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   gap: 10px;
   margin: 12px;
@@ -81,6 +84,7 @@ main {
 
   background: rgba(255, 255, 255, 0.25);
   border-radius: 999px;
+  backdrop-filter: blur(6px);
 }
 
 .tab {
@@ -93,12 +97,29 @@ main {
   cursor: pointer;
   font-weight: 600;
   font-size: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.tab[data-tab="new"] {
+  background: rgba(255, 122, 0, 0.2);
+  color: #ff7a00;
+}
+
+.tab[data-tab="done"] {
+  background: rgba(67, 160, 71, 0.2);
+  color: #2e7d32;
+}
 
 .tab.active {
   background: #ff7a00;
   color: white;
+  box-shadow: 0 8px 16px rgba(255, 122, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.tab[data-tab="done"].active {
+  background: #43a047;
+  box-shadow: 0 8px 16px rgba(67, 160, 71, 0.35);
 }
 
 button {
@@ -110,6 +131,7 @@ button {
   color: white;
   font-size: 15px;
 }
+
 
 
 
