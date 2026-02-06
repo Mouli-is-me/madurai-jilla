@@ -25,7 +25,6 @@ header {
 
 main {
   padding: 12px;
-  margin-top: 8px;
 }
 
 .order-card {
@@ -79,10 +78,10 @@ main {
   gap: 10px;
   margin: 12px;
   padding: 6px;
+
   background: rgba(255, 255, 255, 0.25);
   border-radius: 999px;
 }
-
 
 .tab {
   flex: 1;
@@ -111,6 +110,7 @@ button {
   color: white;
   font-size: 15px;
 }
+
 
 
 
