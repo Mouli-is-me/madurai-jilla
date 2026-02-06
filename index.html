@@ -112,8 +112,16 @@
 <div class="cart-box">
 <h2>🧾 Your Order</h2>
 <div id="cart-items"></div>
-<input type="number" id="table" placeholder="Table No" />
-<button onclick="placeOrder()">Place Order (WhatsApp)</button>
+<input
+  type="text"
+  id="name"
+  name="name"
+  placeholder="Customer Name"
+  autocomplete="name"
+/>
+
+<button onclick="placeOrder()">Place Order</button>
+
         
 <button class="close" onclick="closeCart()">Close</button>
 </div>
@@ -122,6 +130,7 @@
 <script type="module" src="script.js?v=999"></script>
 </body>
 </html>
+
 
 
 
