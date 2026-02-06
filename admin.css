@@ -27,7 +27,7 @@ header {
 
 main {
   padding: 12px;
-  margin-top: 10px;
+  min-height: calc(100vh - 160px);
 }
 
 .order-card {
@@ -115,6 +115,7 @@ button {
   color: white;
   font-size: 15px;
 }
+
 
 
 
