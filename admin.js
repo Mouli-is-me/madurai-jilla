@@ -28,10 +28,19 @@ tabs.forEach(tab => {
   tab.addEventListener("click", () => {
     tabs.forEach(t => t.classList.remove("active"));
     tab.classList.add("active");
+
     currentTab = tab.dataset.tab;
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant"
+    });
+
     renderOrders();
   });
 });
+;
 
 document.addEventListener("DOMContentLoaded", () => {
   const ordersDiv = document.getElementById("orders");
@@ -105,3 +114,4 @@ window.markDone = async function (id) {
     status: "DONE",
   });
 };
+
