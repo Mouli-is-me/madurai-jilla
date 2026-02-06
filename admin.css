@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
 * {
   box-sizing: border-box;
   font-family: Poppins, Arial;
@@ -13,9 +18,12 @@ header {
   color: white;
   padding: 16px;
   text-align: center;
+
   position: sticky;
   top: 0;
+  z-index: 200;
 }
+
 
 main {
   padding: 12px;
@@ -79,16 +87,18 @@ main {
   font-size: 15px;
 }
 
-.tab {
-  flex: 1;
-  padding: 12px 0;
-  border: none;
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin: 12px;
+  padding: 6px;
+
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 999px;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 15px;
+
+  position: sticky;
+  top: 90px;
+  z-index: 201;
 }
 
 .tab.active {
@@ -105,6 +115,7 @@ button {
   color: white;
   font-size: 15px;
 }
+
 
 
 
