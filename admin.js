@@ -22,25 +22,38 @@ const db = getFirestore(app);
 let currentTab = "new";
 let allOrders = [];
 
-const tabs = document.querySelectorAll(".tab");
+document.addEventListener("DOMContentLoaded", () => {
+  const ordersDiv = document.getElementById("orders");
+  const tabs = document.querySelectorAll(".tab");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    tabs.forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", (e) => {
+      e.preventDefault();
+      tab.blur();
 
-    currentTab = tab.dataset.tab;
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
 
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant"
+      currentTab = tab.dataset.tab;
+
+      window.scrollTo(0, 0);
+      renderOrders();
+    });
+  });
+
+  onSnapshot(collection(db, "orders"), (snapshot) => {
+    allOrders = [];
+
+    snapshot.forEach((docSnap) => {
+      allOrders.push({
+        id: docSnap.id,
+        ...docSnap.data(),
+      });
     });
 
     renderOrders();
   });
 });
-;
 
 document.addEventListener("DOMContentLoaded", () => {
   const ordersDiv = document.getElementById("orders");
@@ -114,4 +127,5 @@ window.markDone = async function (id) {
     status: "DONE",
   });
 };
+
 
