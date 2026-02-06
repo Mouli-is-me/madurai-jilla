@@ -18,16 +18,12 @@ header {
   color: white;
   padding: 16px;
   text-align: center;
-
-  position: sticky;
-  top: 0;
-  z-index: 200;
 }
 
 
 main {
   padding: 12px;
-  min-height: calc(100vh - 160px);
+  margin-top: 8px;
 }
 
 .order-card {
@@ -75,6 +71,21 @@ main {
 .item-line:last-child {
   border-bottom: none;
 }
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin: 12px;
+  padding: 6px;
+
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+
 .tab {
   flex: 1;
   padding: 12px 0;
@@ -87,19 +98,6 @@ main {
   font-size: 15px;
 }
 
-.tabs {
-  display: flex;
-  gap: 10px;
-  margin: 12px;
-  padding: 6px;
-
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 999px;
-
-  position: sticky;
-  top: 90px;
-  z-index: 201;
-}
 
 .tab.active {
   background: #ff7a00;
@@ -115,6 +113,7 @@ button {
   color: white;
   font-size: 15px;
 }
+
 
 
 
