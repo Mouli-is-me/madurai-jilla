@@ -21,7 +21,6 @@ Juices
 <button onclick="showCategory('sweet', this)">Sweet </button>
 <button onclick="showCategory('snacks', this)">Snacks</button>
 <button onclick="showCategory('chaat', this)">Chaat</button>
-<button onclick="showCategory('dosa', this)">Dosa</button>
 </div>
 
 <div class="menu">
@@ -30,20 +29,16 @@ Juices
   <div class="item"><div><h4>Mint Soda</h4><p>₹50</p></div><button onclick="addItem('Mint Soda',50)">+</button></div>
   <div class="item"><div><h4>Lemon Soda</h4><p>₹50</p></div><button onclick="addItem('Lemon Soda',50)">+</button></div>
   <div class="item"><div><h4>Rose Milk</h4><p>₹50</p></div><button onclick="addItem('Rose Milk',50)">+</button></div>
-  <div class="item"><div><h4>Fuljar Soda</h4><p>₹50</p></div><button onclick="addItem('Fuljar Soda',50)">+</button></div>
-  <div class="item"><div><h4>Ice Cream Shakes</h4><p>₹60</p></div><button onclick="addItem('Ice Cream Shakes',60)">+</button></div>
+  <div class="item"><div><h4>Fuljar Soda</h4><p>₹50</p></div><button onclick="addItem('Fuljar Soda',50)">+</button></div>
   <div class="item"><div><h4>Coco Gel</h4><p>₹60</p></div><button onclick="addItem('Coco Gel',60)">+</button></div>
   <div class="item"><div><h4>Vanilla Smoothie</h4><p>₹75</p></div><button onclick="addItem('Vanilla Smoothie',75)">+</button></div>
   <div class="item"><div><h4>Choco Smoothie</h4><p>₹75</p></div><button onclick="addItem('Choco Smoothie',75)">+</button></div>
-  <div class="item"><div><h4>Dalgona Coffee</h4><p>₹80</p></div><button onclick="addItem('Dalgona Coffee',80)">+</button></div>
-</div>
 
 <div class="category hidden" id="veg">
   <div class="item"><div><h4>Sandwich - Veg</h4><p>₹55</p></div><button onclick="addItem('Veg Sandwich',55)">+</button></div>
   <div class="item"><div><h4>Burger - Veg</h4><p>₹55</p></div><button onclick="addItem('Veg Burger',55)">+</button></div>
   <div class="item"><div><h4>Aaha Bread</h4><p>₹55</p></div><button onclick="addItem('Aaha Bread',55)">+</button></div>
-  <div class="item"><div><h4>Giru Giru Ball</h4><p>₹55</p></div><button onclick="addItem('Giru Giru Ball',55)">+</button></div>
-  <div class="item"><div><h4>Mini Spring Potato</h4><p>₹60</p></div><button onclick="addItem('Mini Spring Potato',60)">+</button></div>
+  <div class="item"><div><h4>Giru Giru Ball</h4><p>₹55</p></div><button onclick="addItem('Giru Giru Ball',55)">+</button></div>
   <div class="item"><div><h4>French Fries</h4><p>₹60</p></div><button onclick="addItem('French Fries',60)">+</button></div>
 </div>
 
@@ -55,13 +50,12 @@ Juices
   <div class="item"><div><h4>Sandwich - Non Veg</h4><p>₹75</p></div><button onclick="addItem('Non Veg Sandwich',75)">+</button></div>
   <div class="item"><div><h4>KFC Chicken</h4><p>₹80</p></div><button onclick="addItem('KFC Chicken',80)">+</button></div>
   <div class="item"><div><h4>Shawarma</h4><p>₹80</p></div><button onclick="addItem('Shawarma',80)">+</button></div>
-  <div class="item"><div><h4>Tom & Jerry Chicken</h4><p>₹100</p></div><button onclick="addItem('Tom & Jerry Chicken',100)">+</button></div>
+  <div class="item"><div><h4>Tom & Jerry Chicken</h4><p>₹100</p></div><button onclick=Plate shawarma',100)">+</button></div>
 </div>
   
 <div class="category hidden" id="sweet">
   <div class="item"><div><h4>Butter Bun</h4><p>₹25</p></div><button onclick="addItem('Butter Bun',25)">+</button></div>
-  <div class="item"><div><h4>Choco Filled Bread</h4><p>₹40</p></div><button onclick="addItem('Choco Filled Bread',40)">+</button></div>
-  <div class="item"><div><h4>Crystal Fruits</h4><p>₹50</p></div><button onclick="addItem('Crystal Fruits',50)">+</button></div>
+  <div class="item"><div><h4>Choco Filled Bread</h4><p>₹40</p></div><button onclick="addItem('Choco Filled Bread',40)">+</button></div>
   <div class="item"><div><h4>Bread Choco Lollipop</h4><p>₹50</p></div><button onclick="addItem('Bread Choco Lollipop',50)">+</button></div>
   <div class="item"><div><h4>Sweet Milk Bread</h4><p>₹50</p></div><button onclick="addItem('Sweet Milk Bread',50)">+</button></div>
   <div class="item"><div><h4>Brownie / Ice Cream</h4><p>₹65</p></div><button onclick="addItem('Brownie / Ice Cream',65)">+</button></div>
@@ -83,19 +77,7 @@ Juices
   <div class="item"><div><h4>Maggi - Plain</h4><p>₹30</p></div><button onclick="addItem('Maggi Plain',30)">+</button></div>
   <div class="item"><div><h4>Maggi - Cheese</h4><p>₹45</p></div><button onclick="addItem('Maggi Cheese',45)">+</button></div>
   <div class="item"><div><h4>Maggi - Chicken</h4><p>₹50</p></div><button onclick="addItem('Maggi Chicken',50)">+</button></div>
-</div>
-
-  <div class="category hidden" id="dosa">
-  <div class="item">
-    <div>
-      <h4>Dosai (Customizable)</h4>
-      <p>₹50 – ₹80</p>
-    </div>
-    <button onclick="addItem('Custom Dosai',50)">+</button>
-  </div>
-</div>
-
-  
+</div>
 </div>
 
 <div id="cart-bar" onclick="openCart()">
@@ -125,8 +107,5 @@ Juices
 <script type="module" src="script.js?v=999"></script>
 </body>
 </html>
-
-
-
-
+
 
